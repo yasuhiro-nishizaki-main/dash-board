@@ -163,10 +163,15 @@ function renderTaskList() {
     </div>
   `).join("");
 }
+function saveTasks() {
+  localStorage.setItem("portalTasks", JSON.stringify(tasks));
+}
+
 function deleteTask(id) {
   tasks = tasks.filter(task => task.id !== id);
 
   saveTasks();
   renderTaskList();
 }
+
 loadTasks();
