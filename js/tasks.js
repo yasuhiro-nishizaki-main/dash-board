@@ -46,15 +46,6 @@ function createTaskModal() {
   <div id="task-list"></div>
 
 </div>
-
-        <div class="modal-footer">
-          <button
-            class="action-btn btn-secondary"
-            onclick="closeTaskManager()"
-          >
-            閉じる
-          </button>
-        </div>
       </div>
     </div>
   `;
