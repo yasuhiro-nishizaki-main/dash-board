@@ -21,7 +21,7 @@
     keys.forEach(key => {
       const btn = document.createElement('div');
       btn.className = "keypad-btn";
-      if (key === '--') btn.classList.add('keypad-btn-cancel');
+      if (key === '全クリア') btn.classList.add('keypad-btn-cancel');
       if (key === '訂正') btn.classList.add('keypad-btn-danger');
       btn.innerText = key;
 
@@ -87,7 +87,7 @@
     keys.forEach(key => {
       const btn = document.createElement('div');
       btn.className = "keypad-btn";
-      if (key === 'キャンセル') btn.classList.add('keypad-btn-cancel');
+      if (key === '全クリア') btn.classList.add('keypad-btn-cancel');
       if (key === '訂正') btn.classList.add('keypad-btn-danger');
       btn.innerText = key;
 
