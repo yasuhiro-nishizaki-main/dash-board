@@ -121,17 +121,23 @@
     container.appendChild(pinContainer);
   }
 
-  function updatePinDisplay(containerEl) {
-    if (!containerEl) return;
-    containerEl.innerHTML = "";
-    for (let i = 0; i < 6; i++) {
-      const slot = document.createElement('div');
-      slot.className = "pin-digit-slot";
-      if (i < currentPinInput.length) {
-        slot.innerText = currentPinInput[i];
-      } else {
-        slot.innerText = "";
-      }
-      containerEl.appendChild(slot);
+function updatePinDisplay(containerEl) {
+  if (!containerEl) return;
+
+  containerEl.innerHTML = "";
+
+  for (let i = 0; i < 6; i++) {
+    const slot = document.createElement('div');
+
+    slot.className = "pin-digit-slot";
+
+    if (i < currentPinInput.length) {
+      slot.innerText = currentPinInput[i];
+    } else {
+      slot.innerText = "";
     }
+
+    containerEl.appendChild(slot);
+  }
+}
   }
