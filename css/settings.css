@@ -1,1 +1,87 @@
+/* =========================
+   設定画面
+========================= */
 
+.master-pin-section {
+  background: #f0fdf4;
+  border: 2px solid #22c55e;
+  padding: 16px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.master-pin-section label {
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  color: #15803d;
+  margin-bottom: 6px;
+}
+
+.config-card {
+  background: #f8fafc;
+  border: 1px solid #cbd5e0;
+  padding: 18px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.config-card label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #4a5568;
+  margin-top: 10px;
+  margin-bottom: 4px;
+}
+
+.config-card input[type="text"],
+.config-card select,
+.master-pin-section input[type="text"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 15px;
+  background: #fff;
+}
+
+.item-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  align-items: center;
+}
+
+.btn-sm {
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e0;
+  background: #edf2f7;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-sm:hover {
+  background: #e2e8f0;
+}
+
+.btn-danger {
+  background: #fed7d7;
+  color: #9b2c2c;
+  border-color: #feb2b2;
+}
+
+.btn-danger:hover {
+  background: #feb2b2;
+}
+
+.sheet-link-input {
+  background: #fff;
+  border: 1px dashed #cbd5e0;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+}
