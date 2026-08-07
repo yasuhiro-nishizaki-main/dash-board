@@ -54,13 +54,6 @@ function createTaskModal() {
           >
             閉じる
           </button>
-
-          <button
-            class="action-btn btn-primary"
-            onclick="addTask()"
-          >
-            ＋ タスク追加
-          </button>
         </div>
       </div>
     </div>
