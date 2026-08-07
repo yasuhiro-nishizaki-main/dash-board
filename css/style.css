@@ -83,22 +83,6 @@
       letter-spacing: 1px;
     }
 
-    .settings-btn {
-      background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
-      color: #1a202c;
-      border: 1px solid #4a5568;
-      padding: 9px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 16px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-      transition: all 0.1s ease;
-    }
-
-    .settings-btn:hover { background: #edf2f7; }
-    .settings-btn:active { transform: translateY(1px); }
-
     /* メッセージバナー */
     .message-box {
       background: #ffffff;
@@ -166,60 +150,6 @@
       align-content: start;
     }
 
-    /* ATMの立体ボタン */
-    .atm-btn {
-      background: linear-gradient(180deg, var(--btn-grad-top) 0%, var(--btn-grad-bottom) 100%);
-      border: 2px solid var(--btn-border);
-      border-radius: 12px;
-      color: var(--btn-text);
-      font-size: 20px;
-      font-weight: bold;
-      padding: 18px 16px;
-      text-align: center;
-      cursor: grab; /* マウスを掴むアイコンに変更 */
-      box-shadow: 0 5px 8px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.9);
-      text-shadow: 0 1px 0 rgba(255,255,255,0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      min-height: 80px;
-      word-break: break-all;
-      transition: transform 0.05s ease, box-shadow 0.05s ease;
-      position: relative;
-    }
-
-    .atm-btn:active {
-      cursor: grabbing;
-      transform: translateY(3px);
-      box-shadow: 0 2px 3px rgba(0,0,0,0.3);
-      background: linear-gradient(180deg, var(--btn-grad-bottom) 0%, var(--btn-grad-top) 100%);
-    }
-
-    .atm-btn-github {
-      border-color: #24292e;
-      background: linear-gradient(180deg, #f6f8fa 0%, #d1d5da 100%);
-    }
-
-    /* ドラッグ移動中のボタンの表示スタイル */
-    .sortable-ghost {
-      opacity: 0.4;
-      border: 2px dashed #0a5c36;
-      background: #e2e8f0;
-    }
-
-    .lock-badge {
-      font-size: 13px;
-      position: absolute;
-      right: 12px;
-      top: 10px;
-      background: rgba(220, 38, 38, 0.15);
-      border: 1px solid #dc2626;
-      color: #991b1b;
-      padding: 2px 8px;
-      border-radius: 6px;
-    }
-
     /* フォルダビュー（サブ一覧） */
     .folder-view {
       display: flex;
@@ -230,12 +160,5 @@
       overflow-y: auto;
     }
 
-    .link-badge {
-      font-size: 13px;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: rgba(0,0,0,0.08);
-      margin-left: 8px;
-    }
 
 
