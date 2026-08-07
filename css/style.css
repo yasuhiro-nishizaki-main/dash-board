@@ -237,27 +237,6 @@
       background: rgba(0,0,0,0.08);
       margin-left: 8px;
     }
-
-function updatePinDisplay(containerEl) {
-  if (!containerEl) return;
-
-  containerEl.innerHTML = "";
-
-  for (let i = 0; i < 6; i++) {
-    const slot = document.createElement('div');
-
-    slot.className = "pin-digit-slot";
-
-    if (i < currentPinInput.length) {
-      slot.innerText = "●";
-    } else {
-      slot.innerText = "";
-    }
-
-    containerEl.appendChild(slot);
-  }
-}
-
     /* モーダル */
     .modal-overlay {
       display: none;
