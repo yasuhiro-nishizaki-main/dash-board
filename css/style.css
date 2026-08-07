@@ -238,77 +238,25 @@
       margin-left: 8px;
     }
 
-    /* 暗証番号入力画面 */
-    .pin-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      gap: 20px;
+function updatePinDisplay(containerEl) {
+  if (!containerEl) return;
+
+  containerEl.innerHTML = "";
+
+  for (let i = 0; i < 6; i++) {
+    const slot = document.createElement('div');
+
+    slot.className = "pin-digit-slot";
+
+    if (i < currentPinInput.length) {
+      slot.innerText = "●";
+    } else {
+      slot.innerText = "";
     }
 
-    .pin-display-box {
-      display: flex;
-      gap: 16px;
-      background: #ffffff;
-      padding: 16px 32px;
-      border-radius: 12px;
-      border: 3px solid #2d3748;
-      box-shadow: inset 0 2px 5px rgba(0,0,0,0.15);
-    }
-
-    .pin-digit-slot {
-      width: 36px;
-      height: 48px;
-      border-bottom: 4px solid #2d3748;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 36px;
-      font-weight: bold;
-      color: #1a202c;
-    }
-
-    .pin-keypad {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-      width: 340px;
-    }
-
-    .keypad-btn {
-      background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
-      border: 2px solid #64748b;
-      border-radius: 10px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #0f172a;
-      padding: 16px 0;
-      cursor: pointer;
-      box-shadow: 0 3px 5px rgba(0,0,0,0.2);
-      text-align: center;
-    }
-
-    .keypad-btn:active {
-      transform: translateY(2px);
-      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    }
-
-    .keypad-btn-danger {
-      background: linear-gradient(180deg, #fecdd3 0%, #fda4af 100%);
-      border-color: #f43f5e;
-      color: #881337;
-      font-size: 16px;
-    }
-
-    .keypad-btn-cancel {
-      background: linear-gradient(180deg, #e2e8f0 0%, #94a3b8 100%);
-      border-color: #475569;
-      color: #1e293b;
-      font-size: 16px;
-    }
+    containerEl.appendChild(slot);
+  }
+}
 
     /* モーダル */
     .modal-overlay {
