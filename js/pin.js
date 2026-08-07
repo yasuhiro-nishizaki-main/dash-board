@@ -17,7 +17,7 @@
     const keypad = document.createElement('div');
     keypad.className = "pin-keypad";
 
-    const keys = ['1','2','3','4','5','6','7','8','9','--','0','訂正'];
+    const keys = ['1','2','3','4','5','6','7','8','9','全クリア','0','訂正'];
     keys.forEach(key => {
       const btn = document.createElement('div');
       btn.className = "keypad-btn";
@@ -26,7 +26,11 @@
       btn.innerText = key;
 
       btn.onclick = () => {
-        if (key === '--') return;
+        if (key === '全クリア') {
+          currentPinInput = "";
+          updatePinDisplay(document.getElementById('pin-display-slots'));
+          return;
+        }
         if (key === '訂正') {
           currentPinInput = currentPinInput.slice(0, -1);
           updatePinDisplay(document.getElementById('pin-display-slots'));
