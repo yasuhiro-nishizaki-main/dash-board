@@ -137,6 +137,30 @@
 
   margin-left: 8px;
 }
+.task-btn,
+.settings-btn {
+  background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
+  color: #1a202c;
+  border: 1px solid #4a5568;
+  padding: 9px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.1s ease;
+}
+
 .task-btn {
-    margin-right: 10px;
+  margin-right: 10px;
+}
+
+.task-btn:hover,
+.settings-btn:hover {
+  background: #edf2f7;
+}
+
+.task-btn:active,
+.settings-btn:active {
+  transform: translateY(1px);
 }
