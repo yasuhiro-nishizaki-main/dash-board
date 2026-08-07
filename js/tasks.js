@@ -1,3 +1,4 @@
+let tasks = [];
 function createTaskModal() {
   // すでに作成済みなら何もしない
   if (document.getElementById("task-modal-overlay")) {
@@ -45,10 +46,17 @@ function createTaskModal() {
 
   document.body.insertAdjacentHTML("beforeend", modalHtml);
 }
+function loadTasks() {
+  const data = localStorage.getItem("portalTasks");
 
+  if (data) {
+    tasks = JSON.parse(data);
+  }
+}
 
 function openTaskManager() {
   createTaskModal();
+  renderTaskList();
 
   const modal = document.getElementById("task-modal-overlay");
 
@@ -68,5 +76,43 @@ function closeTaskManager() {
 
 
 function addTask() {
-  console.log("タスク追加");
+  const title = prompt("タスク名を入力してください");
+
+  if (!title) return;
+
+  tasks.push({
+    id: Date.now(),
+    title: title,
+    completed: false
+  });
+
+  saveTasks();
+  renderTaskList();
 }
+function renderTaskList() {
+  const taskList = document.getElementById("task-list");
+
+  if (!taskList) return;
+
+  if (tasks.length === 0) {
+    taskList.innerHTML = "タスクはまだありません。";
+    return;
+  }
+
+  taskList.innerHTML = tasks.map(task => `
+    <div class="task-item">
+      <input
+        type="checkbox"
+        ${task.completed ? "checked" : ""}
+      >
+
+      <span>
+        ${task.title}
+      </span>
+    </div>
+  `).join("");
+}
+function saveTasks() {
+  localStorage.setItem("portalTasks", JSON.stringify(tasks));
+}
+loadTasks();
