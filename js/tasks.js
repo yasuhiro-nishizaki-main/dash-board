@@ -21,19 +21,25 @@ function createTaskModal() {
 
         <div class="modal-body">
 
-  <input
-    id="task-input"
-    type="text"
-    placeholder="タスク名を入力"
-  >
+<input
+  id="task-input"
+  type="text"
+  placeholder="タスク名を入力"
+>
 
-  <button
-    class="action-btn btn-primary"
-    onclick="addTask()"
-    style="margin-top:12px;"
-  >
-    ＋追加
-  </button>
+<input
+  id="task-deadline"
+  type="datetime-local"
+  style="margin-top:12px;"
+>
+
+<button
+  class="action-btn btn-primary"
+  onclick="addTask()"
+  style="margin-top:12px;"
+>
+  ＋追加
+</button>
 
   <hr style="margin:20px 0;">
 
@@ -93,18 +99,22 @@ function closeTaskManager() {
 
 function addTask() {
   const input = document.getElementById("task-input");
+  const deadlineInput = document.getElementById("task-deadline");
 
   const title = input.value.trim();
+  const deadline = deadlineInput.value;
 
   if (!title) return;
 
   tasks.push({
     id: Date.now(),
     title,
+    deadline,
     completed: false
   });
 
   input.value = "";
+  deadlineInput.value = "";
 
   saveTasks();
   renderTaskList();
@@ -118,6 +128,33 @@ function renderTaskList() {
     taskList.innerHTML = "タスクはまだありません。";
     return;
   }
+
+  taskList.innerHTML = tasks.map(task => `
+    <div class="task-item">
+      <input
+        type="checkbox"
+        ${task.completed ? "checked" : ""}
+      >
+
+      <div>
+        <div>${task.title}</div>
+
+        ${task.deadline ? `
+          <small>
+            期限：${new Date(task.deadline).toLocaleString("ja-JP")}
+          </small>
+        ` : ""}
+      </div>
+
+      <button
+        class="btn-sm"
+        onclick="deleteTask(${task.id})"
+      >
+        🗑 削除
+      </button>
+    </div>
+  `).join("");
+}
 
   taskList.innerHTML = tasks.map(task => `
     <div class="task-item">
