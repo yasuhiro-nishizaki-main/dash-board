@@ -91,11 +91,10 @@ function addTask() {
   if (!title) return;
 
   tasks.push({
-    id: Date.now(),
-    title,
-    deadline,
-    completed: false
-  });
+  id: Date.now(),
+  title,
+  deadline
+});
 
   input.value = "";
   deadlineInput.value = "";
@@ -113,11 +112,6 @@ function renderTaskList() {
     return;
   }
   tasks.sort((a, b) => {
-  // 完了済みは下へ
-  if (a.completed !== b.completed) {
-    return a.completed ? 1 : -1;
-  }
-
   // 期限なしは下へ
   if (!a.deadline && b.deadline) return 1;
   if (a.deadline && !b.deadline) return -1;
@@ -130,11 +124,6 @@ function renderTaskList() {
 });
   taskList.innerHTML = tasks.map(task => `
     <div class="task-item">
-      <input
-        type="checkbox"
-        ${task.completed ? "checked" : ""}
-      >
-
       <div>
         <div>${task.title}</div>
 
