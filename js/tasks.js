@@ -25,6 +25,7 @@ function createTaskModal() {
   id="task-input"
   type="text"
   placeholder="タスク名を入力"
+  style="width:100%;"
 >
 
 <input
