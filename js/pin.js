@@ -128,7 +128,7 @@
       const slot = document.createElement('div');
       slot.className = "pin-digit-slot";
       if (i < currentPinInput.length) {
-        slot.innerText = "●";
+        slot.innerText = currentPinInput[i];
       } else {
         slot.innerText = "";
       }
