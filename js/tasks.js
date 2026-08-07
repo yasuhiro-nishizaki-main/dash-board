@@ -121,7 +121,22 @@ function renderTaskList() {
     taskList.innerHTML = "タスクはまだありません。";
     return;
   }
+  tasks.sort((a, b) => {
+  // 完了済みは下へ
+  if (a.completed !== b.completed) {
+    return a.completed ? 1 : -1;
+  }
 
+  // 期限なしは下へ
+  if (!a.deadline && b.deadline) return 1;
+  if (a.deadline && !b.deadline) return -1;
+
+  // 両方期限なしならそのまま
+  if (!a.deadline && !b.deadline) return 0;
+
+  // 期限が早い順
+  return new Date(a.deadline) - new Date(b.deadline);
+});
   taskList.innerHTML = tasks.map(task => `
     <div class="task-item">
       <input
