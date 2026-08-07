@@ -1,1 +1,24 @@
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  padding: 14px 16px;
+  margin-bottom: 10px;
+
+  background: #ffffff;
+  border: 2px solid #cbd5e0;
+  border-radius: 8px;
+}
+
+/* 期限1日前 */
+.task-item.task-tomorrow {
+  border-color: #f59e0b;
+  border-width: 3px;
+}
+
+/* 期限当日 */
+.task-item.task-today {
+  border-color: #dc2626;
+  border-width: 3px;
+}
