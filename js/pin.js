@@ -140,4 +140,3 @@ function updatePinDisplay(containerEl) {
     containerEl.appendChild(slot);
   }
 }
-  }
