@@ -1,1 +1,160 @@
+    /* モーダル */
+    .modal-overlay {
+      display: none;
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
+      z-index: 100;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(3px);
+    }
 
+    .modal {
+      background: #ffffff;
+      width: 92%;
+      height: 90%;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      color: #2d3748;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--bg-green);
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .modal-header h3 {
+      font-size: 20px;
+      color: var(--bg-green);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .modal-body {
+      flex-grow: 1;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .master-pin-section {
+      background: #f0fdf4;
+      border: 2px solid #22c55e;
+      padding: 16px 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .master-pin-section label {
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      color: #15803d;
+      margin-bottom: 6px;
+    }
+
+    .config-card {
+      background: #f8fafc;
+      border: 1px solid #cbd5e0;
+      padding: 18px;
+      margin-bottom: 16px;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .config-card label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      color: #4a5568;
+      margin-top: 10px;
+      margin-bottom: 4px;
+    }
+
+    .config-card input[type="text"], .config-card select, .master-pin-section input[type="text"] {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #cbd5e0;
+      border-radius: 6px;
+      font-size: 15px;
+      background: #fff;
+    }
+
+    .item-controls {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+      align-items: center;
+    }
+
+    .btn-sm {
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #cbd5e0;
+      background: #edf2f7;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .btn-sm:hover { background: #e2e8f0; }
+    .btn-danger { background: #fed7d7; color: #9b2c2c; border-color: #feb2b2; }
+    .btn-danger:hover { background: #feb2b2; }
+
+    .sheet-link-input {
+      background: #fff;
+      border: 1px dashed #cbd5e0;
+      padding: 12px;
+      margin-top: 8px;
+      border-radius: 8px;
+    }
+
+    .modal-footer {
+      border-top: 2px solid #e2e8f0;
+      padding-top: 16px;
+      margin-top: 12px;
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .action-btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary { background: var(--bg-green); color: #fff; }
+    .btn-primary:hover { background: #084c2c; }
+    .btn-secondary { background: #e2e8f0; color: #4a5568; }
+    .btn-secondary:hover { background: #cbd5e0; }
+
+    /* ダイアログ */
+    .dialog-box {
+      background: #fff;
+      border: 3px solid var(--bg-green);
+      border-radius: 12px;
+      padding: 24px;
+      width: 380px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+
+    .dialog-msg {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2d3748;
+      margin-bottom: 20px;
+      word-break: break-all;
+    }
