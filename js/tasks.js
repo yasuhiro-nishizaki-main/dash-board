@@ -155,41 +155,6 @@ function renderTaskList() {
     </div>
   `).join("");
 }
-
-  taskList.innerHTML = tasks.map(task => `
-    <div class="task-item">
-      <input
-        type="checkbox"
-        ${task.completed ? "checked" : ""}
-      >
-
-      <span>
-        ${task.title}
-      </span>
-
-      <button
-        class="btn-sm"
-        onclick="deleteTask(${task.id})"
-      >
-        🗑 削除
-      </button>
-    </div>
-  `).join("");
-}
-
-  taskList.innerHTML = tasks.map(task => `
-    <div class="task-item">
-      <input
-        type="checkbox"
-        ${task.completed ? "checked" : ""}
-      >
-
-      <span>
-        ${task.title}
-      </span>
-    </div>
-  `).join("");
-}
 function deleteTask(id) {
   tasks = tasks.filter(task => task.id !== id);
 
