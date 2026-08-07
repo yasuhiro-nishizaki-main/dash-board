@@ -123,8 +123,38 @@ function renderTaskList() {
   // 期限が早い順
   return new Date(a.deadline) - new Date(b.deadline);
 });
-  taskList.innerHTML = tasks.map(task => `
-    <div class="task-item">
+  taskList.innerHTML = tasks.map(task => {
+  let taskClass = "task-item";
+
+  if (task.deadline) {
+    const now = new Date();
+    const deadline = new Date(task.deadline);
+
+    const today = new Date(
+      now.getFullYear(),
+      now.getMonth(),
+      now.getDate()
+    );
+
+    const deadlineDay = new Date(
+      deadline.getFullYear(),
+      deadline.getMonth(),
+      deadline.getDate()
+    );
+
+    const diffDays = Math.round(
+      (deadlineDay - today) / (1000 * 60 * 60 * 24)
+    );
+
+    if (diffDays === 0) {
+      taskClass += " task-today";
+    } else if (diffDays === 1) {
+      taskClass += " task-tomorrow";
+    }
+  }
+
+  return `
+    <div class="${taskClass}">
       <div>
         <div>${task.title}</div>
 
@@ -142,7 +172,8 @@ function renderTaskList() {
         🗑 削除
       </button>
     </div>
-  `).join("");
+  `;
+}).join("");
 }
 function saveTasks() {
   localStorage.setItem("portalTasks", JSON.stringify(tasks));
