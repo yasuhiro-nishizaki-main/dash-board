@@ -20,10 +20,26 @@ function createTaskModal() {
         </div>
 
         <div class="modal-body">
-          <div id="task-list">
-            タスクはまだありません。
-          </div>
-        </div>
+
+  <input
+    id="task-input"
+    type="text"
+    placeholder="タスク名を入力"
+  >
+
+  <button
+    class="action-btn btn-primary"
+    onclick="addTask()"
+    style="margin-top:12px;"
+  >
+    ＋追加
+  </button>
+
+  <hr style="margin:20px 0;">
+
+  <div id="task-list"></div>
+
+</div>
 
         <div class="modal-footer">
           <button
@@ -76,15 +92,19 @@ function closeTaskManager() {
 
 
 function addTask() {
-  const title = prompt("タスク名を入力してください");
+  const input = document.getElementById("task-input");
+
+  const title = input.value.trim();
 
   if (!title) return;
 
   tasks.push({
     id: Date.now(),
-    title: title,
+    title,
     completed: false
   });
+
+  input.value = "";
 
   saveTasks();
   renderTaskList();
